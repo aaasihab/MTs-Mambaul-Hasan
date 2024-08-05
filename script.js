@@ -16,7 +16,7 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
     setTimeout(() => {
       menu.classList.add("hidden");
       overlay.classList.add("hidden");
-    }, 300); // Match the duration of the transition
+    }, 350); // Match the duration of the transition
   }
 });
 
@@ -36,7 +36,7 @@ const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 // Fungsi untuk menampilkan atau menyembunyikan tombol berdasarkan posisi scroll
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 250) {
+  if (window.scrollY > 300) {
     scrollToTopBtn.classList.remove("hidden");
   } else {
     scrollToTopBtn.classList.add("hidden");
@@ -55,4 +55,16 @@ scrollToTopBtn.addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const fadeInSection = document.querySelector(".fade-in");
   fadeInSection.classList.add("visible");
+  
 });
+
+
+
+// untuk animasi section q & a
+function toggleAccordion(button) {
+    const content = button.nextElementSibling;
+    content.classList.toggle('open');
+}
+
+
+// animasi q and a end
