@@ -13,6 +13,51 @@
         // Menginisialisasi polyfill
         smoothscroll.polyfill();
     </script>
+
+    <style>
+
+html {
+            scroll-behavior: smooth;
+        }
+
+        /* Tombol scroll ke atas */
+        #scrollToTopBtn {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        #scrollToTopBtn.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #scrollToTopBtn:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+
+        /* animasi q and a */
+
+        .accordion-content {
+            display: none;
+        }
+        .accordion-content.show {
+            display: block;
+        }
+
+        /* a and a end */
+    </style>
 </head>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
@@ -48,7 +93,7 @@
                     <a href="index.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Beranda</a>
                     <a href="about.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Tentang Kami</a>
                     <a href="program.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Program</a>
-                    <a href="#" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Fasilitas</a>
+                    <a href="galeri.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Galeri</a>
                     <a href="#" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Kontak</a>
                 </nav>
             </div>
@@ -76,7 +121,7 @@
 
         <!-- Program Tahsin -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img src="{{ asset('images/tahsin.jpg') }}" alt="Program Tahsin" class="w-full h-48 object-cover">
+            <img src="image/" alt="Program Tahsin" class="w-full h-48 object-cover">
             <div class="p-6">
                 <h2 class="text-2xl font-bold text-green-800 mb-3">Tahsin</h2>
                 <p class="text-gray-700 leading-relaxed">
@@ -87,7 +132,7 @@
 
         <!-- Program Sholat Duha dan Duhur Berjamaah -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img src="..\image\sholat.jpeg" alt="Sholat Duha dan Duhur Berjamaah" class="w-full h-48 object-cover">
+            <img src="image\sholat.jpeg" alt="Sholat Duha dan Duhur Berjamaah" class="w-full h-48 object-cover">
             <div class="p-6">
                 <h2 class="text-2xl font-bold text-green-800 mb-3">Sholat Duha dan Duhur Berjamaah</h2>
                 <p class="text-gray-700 leading-relaxed">
@@ -98,7 +143,7 @@
 
         <!-- Program Tadabur Alam -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img src="..\image\tadabur.jpeg" alt="Tadabur Alam" class="w-full h-48 object-cover">
+            <img src="image\tadabur.jpeg" alt="Tadabur Alam" class="w-full h-48 object-cover">
             <div class="p-6">
                 <h2 class="text-2xl font-bold text-green-800 mb-3">Tadabur Alam</h2>
                 <p class="text-gray-700 leading-relaxed">
@@ -120,7 +165,7 @@
 
         <!-- Program p5  -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img src="..\image\p5.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
+            <img src="image\p5.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
             <div class="p-6">
                 <h2 class="text-2xl font-bold text-green-800 mb-3">Project Penguatan Profil Pelajar Pancasila (P5)</h2>
                 <p class="text-gray-700 leading-relaxed">
@@ -142,7 +187,7 @@
 
         <!-- Program class meeting  -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img src="..\image\class.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
+            <img src="image\class.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
             <div class="p-6">
                 <h2 class="text-2xl font-bold text-green-800 mb-3">Class Meeting</h2>
                 <p class="text-gray-700 leading-relaxed">
@@ -152,7 +197,7 @@
         </div>
         <!-- Program pramuka -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img src="..\image\pramuka.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
+            <img src="image\pramuka.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
             <div class="p-6">
                 <h2 class="text-2xl font-bold text-green-800 mb-3">Ekstra Pramuka</h2>
                 <p class="text-gray-700 leading-relaxed">
@@ -173,7 +218,7 @@
 
         <!-- Program ekstra komputer  -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img src="..\image\ac6.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
+            <img src="image\ac6.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
             <div class="p-6">
                 <h2 class="text-2xl font-bold text-green-800 mb-3">Ekstra Komputer</h2>
                 <p class="text-gray-700 leading-relaxed">

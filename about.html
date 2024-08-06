@@ -6,13 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tentang kami</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="..\css\style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
     <script>
         // Menginisialisasi polyfill
         smoothscroll.polyfill();
     </script>
+
+
+<style>
+
+
+
+
+html {
+            scroll-behavior: smooth;
+        }
+
+        /* Tombol scroll ke atas */
+        #scrollToTopBtn {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        #scrollToTopBtn.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #scrollToTopBtn:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+
+
+
+
+
+
+    /* animasi q and a */
+
+    .accordion-content {
+            display: none;
+        }
+        .accordion-content.show {
+            display: block;
+        }
+
+        /* a and a end */
+</style>
 </head>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
@@ -32,7 +85,7 @@
                     <a href="index.html" class="hover:text-yellow-400 transition-colors duration-300">Beranda</a>
                     <a href="about.html" class="hover:text-yellow-400 transition-colors duration-300">Tentang Kami</a>
                     <a href="program.html" class="hover:text-yellow-400 transition-colors duration-300">Program</a>
-                    <a href="#" class="hover:text-yellow-400 transition-colors duration-300">Fasilitas</a>
+                    <a href="galeri.html" class="hover:text-yellow-400 transition-colors duration-300">Galeri</a>
                     <a href="#" class="hover:text-yellow-400 transition-colors duration-300">Kontak</a>
                 </nav>
                 <div class="md:hidden">
@@ -48,7 +101,7 @@
                     <a href="index.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Beranda</a>
                     <a href="about.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Tentang Kami</a>
                     <a href="program.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Program</a>
-                    <a href="#" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Fasilitas</a>
+                    <a href="galeri.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Galeri</a>
                     <a href="#" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Kontak</a>
                 </nav>
             </div>

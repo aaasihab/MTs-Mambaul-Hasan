@@ -60,7 +60,25 @@ document.addEventListener("DOMContentLoaded", function () {
 // untuk animasi section q & a
 function toggleAccordion(button) {
   const content = button.nextElementSibling;
-  content.classList.toggle("open");
+  content.classList.toggle("show");
+}
+// animasi q and a end
+
+// animasi galery index
+
+let currentSlide = 0;
+
+function moveSlide(step) {
+  const slides = document.querySelectorAll(".carousel-item");
+  const totalSlides = slides.length;
+  currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+  const offset = -currentSlide * 100;
+  document.querySelector(
+    ".carousel-wrapper"
+  ).style.transform = `translateX(${offset}%)`;
 }
 
-// animasi q and a end
+function toggleAccordion(button) {
+  const content = button.nextElementSibling;
+  content.classList.toggle("show");
+}
