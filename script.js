@@ -55,16 +55,12 @@ scrollToTopBtn.addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const fadeInSection = document.querySelector(".fade-in");
   fadeInSection.classList.add("visible");
-  
 });
-
-
 
 // untuk animasi section q & a
 function toggleAccordion(button) {
-    const content = button.nextElementSibling;
-    content.classList.toggle('open');
+  const content = button.nextElementSibling;
+  content.classList.toggle("open");
 }
-
 
 // animasi q and a end

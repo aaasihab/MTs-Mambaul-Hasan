@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tentang kami</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="..\css\style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
+    <script>
+        // Menginisialisasi polyfill
+        smoothscroll.polyfill();
+    </script>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Overlay -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-20 transition-opacity duration-300"></div>
+
+    <header class="bg-gradient-to-r from-green-700 to-green-600 shadow fixed w-full z-30">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo Lembaga -->
+                <div class="flex items-center">
+                    <img src="image/logo-mts.png" alt="Logo Lembaga" class="w-12 h-12 mr-3 transition-transform duration-300 hover:scale-110">
+                    <div class="text-xl sm:text-2xl md:text-3xl font-bold text-white">MTs Mambaul Hasan</div>
+                </div>
+                <nav class="hidden md:flex space-x-4 text-white">
+                    <a href="index.html" class="hover:text-yellow-400 transition-colors duration-300">Beranda</a>
+                    <a href="about.html" class="hover:text-yellow-400 transition-colors duration-300">Tentang Kami</a>
+                    <a href="program.html" class="hover:text-yellow-400 transition-colors duration-300">Program</a>
+                    <a href="#" class="hover:text-yellow-400 transition-colors duration-300">Fasilitas</a>
+                    <a href="#" class="hover:text-yellow-400 transition-colors duration-300">Kontak</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden mt-2 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                <nav class="space-y-1 p-4">
+                    <a href="index.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Beranda</a>
+                    <a href="about.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Tentang Kami</a>
+                    <a href="program.html" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Program</a>
+                    <a href="#" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Fasilitas</a>
+                    <a href="#" class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Kontak</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-4xl font-extrabold text-green-800 mb-8 mt-10 text-center">Program Kami</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Program Tahfid -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="{{ asset('images/tahfid.jpg') }}" alt="Program Tahfid" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Tahfid</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Program Tahfid bertujuan untuk menghafal Al-Qur'an dengan target tertentu. Siswa akan diberikan bimbingan intensif untuk mempercepat proses hafalan dengan metode yang efektif dan pengawasan yang ketat.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program Tahsin -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="{{ asset('images/tahsin.jpg') }}" alt="Program Tahsin" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Tahsin</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Program Tahsin fokus pada perbaikan bacaan Al-Qur'an agar sesuai dengan tajwid yang benar. Peserta akan dilatih oleh pengajar berpengalaman untuk memperbaiki dan menyempurnakan bacaan mereka.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program Sholat Duha dan Duhur Berjamaah -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="..\image\sholat.jpeg" alt="Sholat Duha dan Duhur Berjamaah" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Sholat Duha dan Duhur Berjamaah</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Setiap hari, siswa dianjurkan untuk mengikuti sholat duha sebagai bentuk ibadah tambahan, serta sholat duha berjamaah sebagai bagian dari rutinitas harian di sekolah.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program Tadabur Alam -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="..\image\tadabur.jpeg" alt="Tadabur Alam" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Tadabur Alam</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Program Tadabur Alam dilaksanakan setiap tiga bulan sekali. Kegiatan ini melibatkan eksplorasi dan refleksi terhadap ciptaan Allah sebagai bagian dari pendidikan spiritual dan ilmiah.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program Khotmil Quran -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="{{ asset('images/khotmil-quran.jpg') }}" alt="Khotmil Quran" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Khotmil Quran</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Setiap akhir bulan, diadakan acara khotmil Quran di mana seluruh siswa bersama-sama menyelesaikan pembacaan Al-Qur'an. Kegiatan ini merupakan bagian dari upaya untuk meningkatkan kecintaan terhadap Al-Qur'an.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program p5  -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="..\image\p5.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Project Penguatan Profil Pelajar Pancasila (P5)</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Program Penguatan Profil Pelajar Pancasila dirancang untuk membentuk siswa yang tidak hanya cerdas secara akademis tetapi juga memiliki karakter kuat dan berlandaskan pada nilai-nilai Pancasila.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program Istigosah -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="{{ asset('images/istigosah.jpg') }}" alt="Istigosah" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Istigosah</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Program Istigosah dilaksanakan setiap hari Jumat. Kegiatan ini merupakan doa bersama yang dilakukan untuk memohon keberkahan dan keselamatan bagi seluruh anggota sekolah.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program class meeting  -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="..\image\class.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Class Meeting</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Program ini mencakup berbagai lomba dan kompetisi seperti olahraga, seni, dan permainan kreatif yang dirancang untuk mempererat tali persahabatan antar siswa.
+                </p>
+            </div>
+        </div>
+        <!-- Program pramuka -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="..\image\pramuka.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Ekstra Pramuka</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Program ini mengajarkan kepemimpinan, kerjasama, dan kemandirian melalui berbagai kegiatan seru seperti kemah, eksplorasi alam, dan proyek sosial.
+                </p>
+            </div>
+        </div>
+        <!-- Program pencak silat  -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="{{ asset('images/istigosah.jpg') }}" alt="Istigosah" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Ekstra Pencak silat</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Temukan kekuatan dan keseimbangan dalam setiap gerakan di program ekstrakurikuler Pencak Silat kami. Melalui seni bela diri tradisional ini, siswa tidak hanya belajar teknik pertahanan diri, tetapi juga nilai-nilai disiplin, kepercayaan diri, dan kebanggaan budaya.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program ekstra komputer  -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="..\image\ac6.jpeg" alt="Istigosah" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-green-800 mb-3">Ekstra Komputer</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Jelajahi dunia digital lebih dalam dengan program Ekstra Komputer kami! Dirancang untuk menambah keterampilan teknologi siswa
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Q&A Section -->
+<section class="bg-white py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-green-800">Tanya Jawab</h2>
+            <p class="text-gray-600 mt-2">Pertanyaan yang sering diajukan tentang MTs Mambaul Hasan</p>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-green-100 rounded-lg shadow-lg p-4">
+                <button class="w-full text-left text-green-700 font-semibold text-lg" onclick="toggleAccordion(this)">
+                    Mengapa memilih MTs Mambaul Hasan?
+                </button>
+                <div class="accordion-content mt-2 text-gray-700">
+                    <p>Karena kami memiliki mobil antar jemput, fasilitas lengkap, dan program pendidikan yang berkualitas serta berlandaskan nilai-nilai Islami.</p>
+                </div>
+            </div>
+            <div class="bg-green-100 rounded-lg shadow-lg p-4">
+                <button class="w-full text-left text-green-700 font-semibold text-lg" onclick="toggleAccordion(this)">
+                    Apa saja fasilitas yang tersedia di MTs Mambaul Hasan?
+                </button>
+                <div class="accordion-content mt-2 text-gray-700">
+                    <p>Kami memiliki fasilitas laboratorium, perpustakaan, ruang komputer, masjid, dan lapangan olahraga yang lengkap.</p>
+                </div>
+            </div>
+            <div class="bg-green-100 rounded-lg shadow-lg p-4">
+                <button class="w-full text-left text-green-700 font-semibold text-lg" onclick="toggleAccordion(this)">
+                    Bagaimana cara mendaftar di MTs Mambaul Hasan?
+                </button>
+                <div class="accordion-content mt-2 text-gray-700">
+                    <p>Pendaftaran dapat dilakukan secara online melalui website resmi kami atau datang langsung ke kantor pendaftaran di sekolah.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-green-900 text-white py-6">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between">
+            <div class="mb-4 md:mb-0">
+                <h3 class="font-bold text-lg">MTs Mambaul Hasan</h3>
+                <p>Jl. Joharan Sumberrejo, Probolinggo, Jawa Timur.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg">Kontak</h3>
+                <p>Telepon: +62 123 456 7890</p>
+                <p>Email: mtsmambaulhasan.com</p>
+            </div>
+        </div>
+        <div class="text-center mt-6">
+            <p>&copy; 2024 MTs Mambaul Hasan. All right reserved.</p>
+            <p class="text-sm font-bold mt-2 ">Powered by KKN UNUJA</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="pt-2 w-10 fixed bottom-4 right-4 bg-green-700 text-white p-2 rounded-full shadow-md hover:bg-green-800 focus:outline-none">
+    ^
+</button>
+</div>
+
+<!-- JavaScript for Mobile Menu Toggle -->
+<script src="script.js">
+
+</script>
+</body>
+
+</html>
