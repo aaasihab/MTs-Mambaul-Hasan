@@ -1,0 +1,146 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tombol scroll ke atas all */
+#scrollToTopBtn {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#scrollToTopBtn.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#scrollToTopBtn:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* untuk section galery index */
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.control-button {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.control-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+/* animasi galery end index */
+
+/* animasi q and a all */
+
+.accordion-content {
+  display: none;
+}
+.accordion-content.show {
+  display: block;
+}
+
+/* a and a end  all*/
+
+/* Submenu styling all */
+.group:hover .group-hover\:block {
+  display: block;
+}
+
+/* Submenu background and styling all */
+.group:hover .group-hover\:block {
+  display: block;
+}
+
+.group:hover .group-hover\:block:hover {
+  display: block;
+}
+
+.relative:hover .absolute {
+  display: block;
+}
+
+/* Ensure submenu stays visible all */
+.relative:hover .absolute {
+  display: block;
+}
+
+/* Adjust padding and positioning all  */
+.relative .absolute {
+  top: 100%; /* Ensures submenu appears just below the parent */
+  left: 0;
+  width: max-content;
+  padding: 0.5rem 0; /* Adds spacing inside the submenu */
+}
+
+/* Submenu styling for mobile all */
+#about-submenu {
+  background-color: #04844d; /* Green color to match the header */
+  background: transparent;
+}
+
+#about-submenu a {
+  color: white;
+}
+
+#about-submenu a:hover {
+  background-color: #036537; /* Darker green on hover */
+}
+
+/* biodata guru animasi */

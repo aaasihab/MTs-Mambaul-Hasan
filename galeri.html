@@ -8,55 +8,12 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
     <script>
       // Menginisialisasi polyfill
       smoothscroll.polyfill();
     </script>
-
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Tombol scroll ke atas */
-      #scrollToTopBtn {
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-      }
-
-      #scrollToTopBtn.hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      #scrollToTopBtn:not(.hidden) {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .fade-in {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 1s ease-out, transform 1s ease-out;
-      }
-
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* animasi q and a */
-
-      .accordion-content {
-        display: none;
-      }
-      .accordion-content.show {
-        display: block;
-      }
-
-      /* a and a end */
-    </style>
   </head>
   <body>
     <!-- Overlay -->
@@ -87,25 +44,39 @@
               class="hover:text-yellow-400 transition-colors duration-300"
               >Beranda</a
             >
-            <a
-              href="about.html"
-              class="hover:text-yellow-400 transition-colors duration-300"
-              >Tentang Kami</a
-            >
+            <div class="relative group">
+              <a
+                href="#"
+                class="hover:text-yellow-400 transition-colors duration-300"
+                >Tentang Kami</a
+              >
+              <div
+                class="absolute left-0 hidden group-hover:block bg-green-600 text-white mt-1 rounded shadow-lg"
+              >
+                <a
+                  href="sejarah.html"
+                  class="block px-4 py-3 hover:bg-green-700"
+                  >Sejarah</a
+                >
+                <a href="guru.html" class="block px-4 py-2 hover:bg-green-700"
+                  >Guru</a
+                >
+              </div>
+            </div>
             <a
               href="program.html"
               class="hover:text-yellow-400 transition-colors duration-300"
               >Program</a
             >
             <a
-              href="galeri"
+              href="galeri.html"
               class="hover:text-yellow-400 transition-colors duration-300"
               >Galeri</a
             >
             <a
-              href="#"
+              href="ppdb.html"
               class="hover:text-yellow-400 transition-colors duration-300"
-              >Kontak</a
+              >PPDBk</a
             >
           </nav>
           <div class="md:hidden">
@@ -137,11 +108,27 @@
               class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
               >Beranda</a
             >
-            <a
-              href="about.html"
-              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
-              >Tentang Kami</a
-            >
+            <div class="relative">
+              <a
+                href="#"
+                id="about-us-mobile"
+                class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
+                >Tentang Kami</a
+              >
+              <div
+                id="about-submenu"
+                class="hidden bg-green-600 text-white mt-1 rounded shadow-lg"
+              >
+                <a
+                  href="sejarah.html"
+                  class="block px-4 py-2 hover:bg-green-700"
+                  >Sejarah</a
+                >
+                <a href="guru.html" class="block px-4 py-2 hover:bg-green-700"
+                  >Guru</a
+                >
+              </div>
+            </div>
             <a
               href="program.html"
               class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
@@ -153,17 +140,19 @@
               >Galeri</a
             >
             <a
-              href="#"
+              href="ppdb.html"
               class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
-              >Kontak</a
+              >PPDB</a
             >
           </nav>
         </div>
       </div>
     </header>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 class="text-4xl font-extrabold text-green-800 mb-8 mt-10 text-center">
+    <div class="container mx-auto sm:px-6 lg:px-8 pt-9">
+      <h1
+        class="text-4xl font-extrabold text-green-800 mb-8 mt-8 pt-10 text-center"
+      >
         Gallery
       </h1>
 
@@ -297,8 +286,32 @@
             </div>
           </div>
           <div class="text-center mt-6">
-            <p>&copy; 2024 MTs Mambaul Hasan. All right reserved.</p>
+            <p>&copy; 2024 MTs Mambaul Hasan. All rights reserved.</p>
             <p class="text-sm font-bold mt-2">Powered by KKN UNUJA</p>
+          </div>
+          <!-- Social Media Icons -->
+          <div class="text-center mt-6">
+            <a
+              href="https://www.facebook.com/yourpage"
+              class="text-white hover:text-yellow-400 mx-2"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f fa-lg"></i>
+            </a>
+            <a
+              href="https://youtube.com/@mtsmambaulhasan?si=kF3BV7QspIRk8f-d"
+              class="text-white hover:text-yellow-400 mx-2"
+              target="_blank"
+            >
+              <i class="fab fa-youtube fa-lg"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/mts_mambaulhasan?igsh=MW85ZDd6aDNmd2QxOQ=="
+              class="text-white hover:text-yellow-400 mx-2"
+              target="_blank"
+            >
+              <i class="fab fa-instagram fa-lg"></i>
+            </a>
           </div>
         </div>
       </footer>

@@ -8,7 +8,7 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
       menu.classList.add("max-h-screen");
       overlay.classList.remove("hidden");
       overlay.classList.add("opacity-100");
-    }, 10); // Small delay to ensure transition effect
+    }, 10); // Small delay to ensure smooth transition
   } else {
     menu.classList.add("max-h-0");
     menu.classList.remove("max-h-screen");
@@ -16,12 +16,13 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
     setTimeout(() => {
       menu.classList.add("hidden");
       overlay.classList.add("hidden");
-    }, 350); // Match the duration of the transition
+    }, 300); // Match the duration of the transition
   }
 });
 
 document.getElementById("overlay").addEventListener("click", function () {
   var menu = document.getElementById("mobile-menu");
+  var overlay = document.getElementById("overlay");
   menu.classList.add("max-h-0");
   menu.classList.remove("max-h-screen");
   overlay.classList.remove("opacity-100");
@@ -30,6 +31,19 @@ document.getElementById("overlay").addEventListener("click", function () {
     overlay.classList.add("hidden");
   }, 300); // Match the duration of the transition
 });
+
+// Script for the submenu on mobile
+document
+  .getElementById("about-us-mobile")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    var submenu = document.getElementById("about-submenu");
+    if (submenu.classList.contains("hidden")) {
+      submenu.classList.remove("hidden");
+    } else {
+      submenu.classList.add("hidden");
+    }
+  });
 
 // Mendapatkan elemen tombol scroll to top
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -82,3 +96,44 @@ function toggleAccordion(button) {
   const content = button.nextElementSibling;
   content.classList.toggle("show");
 }
+
+// animasi biodata guru
+
+// Animasi saat di-scroll
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollElements = document.querySelectorAll(".scroll-animation");
+
+  const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+      elementTop <=
+      (window.innerHeight || document.documentElement.clientHeight) / dividend
+    );
+  };
+
+  const displayScrollElement = (element) => {
+    element.classList.add("opacity-100", "translate-y-0");
+  };
+
+  const hideScrollElement = (element) => {
+    element.classList.remove("opacity-100", "translate-y-0");
+  };
+
+  const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el, 1.25)) {
+        displayScrollElement(el);
+      } else {
+        hideScrollElement(el);
+      }
+    });
+  };
+
+  window.addEventListener("scroll", () => {
+    handleScrollAnimation();
+  });
+
+  handleScrollAnimation(); // Run on page load
+});
+
+// animasi biodata guru end
