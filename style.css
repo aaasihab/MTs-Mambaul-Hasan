@@ -85,6 +85,16 @@ html {
 .control-button:hover {
   background: rgba(0, 0, 0, 0.7);
 }
+
+
+/* Gambar tidak full pada tampilan desktop */
+@media (min-width: 768px) {
+    .carousel {
+        width: 70%; /* Atur lebar sesuai kebutuhan */
+        margin: 0 auto;
+    }
+}
+
 /* animasi galery end index */
 
 /* animasi q and a all */
