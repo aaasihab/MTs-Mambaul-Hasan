@@ -1,343 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galeri</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
-    <script>
-      // Menginisialisasi polyfill
-      smoothscroll.polyfill();
-    </script>
-  </head>
-  <body>
-    <!-- Overlay -->
-    <div
-      id="overlay"
-      class="hidden fixed inset-0 bg-black bg-opacity-50 z-20 transition-opacity duration-300"
-    ></div>
 
-    <header
-      class="bg-gradient-to-r from-green-700 to-green-600 shadow fixed w-full z-30"
-    >
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div class="flex items-center justify-between">
-          <!-- Logo Lembaga -->
-          <div class="flex items-center">
-            <img
-              src="image/logo-mts.png"
-              alt="Logo Lembaga"
-              class="w-12 h-12 mr-3 transition-transform duration-300 hover:scale-110"
-            />
-            <div class="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-              MTs Mambaul Hasan
-            </div>
-          </div>
-          <nav class="hidden md:flex space-x-4 text-white">
-            <a
-              href="index.html"
-              class="hover:text-yellow-400 transition-colors duration-300"
-              >Beranda</a
-            >
-            <div class="relative group">
-              <a
-                href="#"
-                class="hover:text-yellow-400 transition-colors duration-300"
-                >Tentang Kami</a
-              >
-              <div
-                class="absolute left-0 hidden group-hover:block bg-green-600 text-white mt-1 rounded shadow-lg"
-              >
-                <a
-                  href="sejarah.html"
-                  class="block px-4 py-3 hover:bg-green-700"
-                  >Sejarah</a
-                >
-                <a href="guru.html" class="block px-4 py-2 hover:bg-green-700"
-                  >Guru</a
-                >
-              </div>
-            </div>
-            <a
-              href="program.html"
-              class="hover:text-yellow-400 transition-colors duration-300"
-              >Program</a
-            >
-            <a
-              href="galeri.html"
-              class="hover:text-yellow-400 transition-colors duration-300"
-              >Galeri</a
-            >
-            <a
-              href="ppdb.html"
-              class="hover:text-yellow-400 transition-colors duration-300"
-              >PPDB</a
-            >
-          </nav>
-          <div class="md:hidden">
-            <button id="menu-toggle" class="text-white focus:outline-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
+  <script>
+    // Menginisialisasi polyfill
+    smoothscroll.polyfill();
+  </script>
+</head>
+
+<body>
+  <!-- Overlay -->
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-20 transition-opacity duration-300"></div>
+
+  <header class="bg-gradient-to-r from-green-700 to-green-600 shadow fixed w-full z-30">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <div class="flex items-center justify-between">
+        <!-- Logo Lembaga -->
+        <div class="flex items-center">
+          <img src="image/logo-mts.png" alt="Logo Lembaga"
+            class="w-12 h-12 mr-3 transition-transform duration-300 hover:scale-110" />
+          <div class="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+            MTs Mambaul Hasan
           </div>
         </div>
-        <div
-          id="mobile-menu"
-          class="md:hidden hidden mt-2 max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <nav class="space-y-1 p-4">
-            <a
-              href="index.html"
-              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
-              >Beranda</a
-            >
-            <div class="relative">
-              <a
-                href="#"
-                id="about-us-mobile"
-                class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
-                >Tentang Kami</a
-              >
-              <div
-                id="about-submenu"
-                class="hidden bg-green-600 text-white mt-1 rounded shadow-lg"
-              >
-                <a
-                  href="sejarah.html"
-                  class="block px-4 py-2 hover:bg-green-700"
-                  >Sejarah</a
-                >
-                <a href="guru.html" class="block px-4 py-2 hover:bg-green-700"
-                  >Guru</a
-                >
-              </div>
+        <nav class="hidden md:flex space-x-4 text-white">
+          <a href="index.html" class="hover:text-yellow-400 transition-colors duration-300">Beranda</a>
+          <div class="relative group">
+            <a href="#" class="hover:text-yellow-400 transition-colors duration-300 py-4">Tentang Kami</a>
+            <div class="absolute left-0 hidden group-hover:block bg-green-600 text-white mt-1 rounded shadow-lg">
+              <a href="sejarah.html" class="block px-4 py-3 hover:bg-green-700">Sejarah</a>
+              <a href="guru.html" class="block px-4 py-2 hover:bg-green-700">Guru</a>
             </div>
-            <a
-              href="program.html"
-              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
-              >Program</a
-            >
-            <a
-              href="galeri.html"
-              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
-              >Galeri</a
-            >
-            <a
-              href="ppdb.html"
-              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
-              >PPDB</a
-            >
-          </nav>
+          </div>
+          <a href="program.html" class="hover:text-yellow-400 transition-colors duration-300">Program</a>
+          <a href="galeri.html" class="hover:text-yellow-400 transition-colors duration-300">Galeri</a>
+          <a href="ppdb.html" class="hover:text-yellow-400 transition-colors duration-300">PPDB</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
         </div>
       </div>
-    </header>
-
-    <div class="container mx-auto sm:px-6 lg:px-8 pt-9">
-      <h1
-        class="text-4xl font-extrabold text-green-800 mb-8 mt-8 pt-10 text-center"
-      >
-        Gallery
-      </h1>
-
-      <!-- Section for 2023 -->
-      <div class="year-section mb-12">
-        <h2 class="text-2xl font-bold text-green-800 mb-6">
-          Kegiatan Tahun 2023
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Example of an image block -->
-          <div class="gallery-item">
-            <img
-              src="image/p5.jpeg"
-              alt="Activity 1"
-              class="rounded-lg shadow-lg"
-            />
-            <h3 class="text-lg font-semibold text-green-800 mt-2">
-              Kegiatan P5
-            </h3>
-            <p class="text-gray-700">
-              Project Penguatan Profil Pelajar Pancasila
-            </p>
+      <div id="mobile-menu"
+        class="md:hidden hidden mt-2 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+        <nav class="space-y-1 p-4">
+          <a href="index.html"
+            class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Beranda</a>
+          <div class="relative">
+            <a href="#" id="about-us-mobile"
+              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Tentang Kami</a>
+            <div id="about-submenu" class="hidden bg-green-600 text-white mt-1 rounded shadow-lg">
+              <a href="sejarah.html" class="block px-4 py-2 hover:bg-green-700">Sejarah</a>
+              <a href="guru.html" class="block px-4 py-2 hover:bg-green-700">Guru</a>
+            </div>
           </div>
-          <div class="gallery-item">
-            <img
-              src="image/p5.jpeg"
-              alt="Activity 1"
-              class="rounded-lg shadow-lg"
-            />
-            <h3 class="text-lg font-semibold text-green-800 mt-2">
-              Kegiatan P5
-            </h3>
-            <p class="text-gray-700">
-              Project Penguatan Profil Pelajar Pancasila
-            </p>
-          </div>
-          <!-- Repeat similar blocks for more images -->
-        </div>
+          <a href="program.html"
+            class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Program</a>
+          <a href="galeri.html"
+            class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Galeri</a>
+          <a href="ppdb.html"
+            class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">PPDB</a>
+        </nav>
       </div>
-
-      <!-- Section for 2022 -->
-      <div class="year-section mb-12">
-        <h2 class="text-2xl font-bold text-green-800 mb-6">
-          Kegiatan tahun 2022
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Example of an image block -->
-          <div class="gallery-item">
-            <img
-              src="image/tadabur.jpeg"
-              alt="Activity 1"
-              class="rounded-lg shadow-lg"
-            />
-            <h3 class="text-lg font-semibold text-green-800 mt-2">
-              Outing Class
-            </h3>
-            <p class="text-gray-700">Outing class di pasir putih situbondo</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="image/pramuka.jpeg"
-              alt="Activity 1"
-              class="rounded-lg shadow-lg"
-            />
-            <h3 class="text-lg font-semibold text-green-800 mt-2">
-              Persami
-            </h3>
-            <p class="text-gray-700">persami di halaman mts mambaul hasan</p>
-          </div>
-          <!-- Repeat similar blocks for more images -->
-        </div>
-      </div>
-
-      <!-- Q&A Section -->
-      <section class="bg-white py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-green-800">Tanya Jawab</h2>
-            <p class="text-gray-600 mt-2">
-              Pertanyaan yang sering diajukan tentang MTs Mambaul Hasan
-            </p>
-          </div>
-          <div class="space-y-4">
-            <div class="bg-green-100 rounded-lg shadow-lg p-4">
-              <button
-                class="w-full text-left text-green-700 font-semibold text-lg"
-                onclick="toggleAccordion(this)"
-              >
-                Mengapa memilih MTs Mambaul Hasan?
-              </button>
-              <div class="accordion-content mt-2 text-gray-700">
-                <p>
-                  Karena kami memiliki mobil antar jemput, fasilitas lengkap,
-                  dan program pendidikan yang berkualitas serta berlandaskan
-                  nilai-nilai Islami.
-                </p>
-              </div>
-            </div>
-            <div class="bg-green-100 rounded-lg shadow-lg p-4">
-              <button
-                class="w-full text-left text-green-700 font-semibold text-lg"
-                onclick="toggleAccordion(this)"
-              >
-                Apa saja fasilitas yang tersedia di MTs Mambaul Hasan?
-              </button>
-              <div class="accordion-content mt-2 text-gray-700">
-                <p>
-                  Kami memiliki fasilitas laboratorium, perpustakaan, ruang
-                  komputer, masjid, dan lapangan olahraga yang lengkap.
-                </p>
-              </div>
-            </div>
-            <div class="bg-green-100 rounded-lg shadow-lg p-4">
-              <button
-                class="w-full text-left text-green-700 font-semibold text-lg"
-                onclick="toggleAccordion(this)"
-              >
-                Bagaimana cara mendaftar di MTs Mambaul Hasan?
-              </button>
-              <div class="accordion-content mt-2 text-gray-700">
-                <p>
-                  Pendaftaran dapat dilakukan secara online melalui website
-                  resmi kami atau datang langsung ke kantor pendaftaran di
-                  sekolah.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="bg-green-900 text-white py-6">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex flex-col md:flex-row justify-between">
-            <div class="mb-4 md:mb-0">
-              <h3 class="font-bold text-lg">MTs Mambaul Hasan</h3>
-              <p>Jl. Joharan Sumberrejo, Probolinggo, Jawa Timur.</p>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg">Kontak</h3>
-              <p>Telepon: +62 123 456 7890</p>
-              <p>Email: mtsmambaulhasan.com</p>
-            </div>
-          </div>
-          <div class="text-center mt-6">
-            <p>&copy; 2024 MTs Mambaul Hasan. All rights reserved.</p>
-            <p class="text-sm font-bold mt-2">Powered by KKN UNUJA</p>
-          </div>
-          <!-- Social Media Icons -->
-          <div class="text-center mt-6">
-            <a
-              href="https://www.facebook.com/yourpage"
-              class="text-white hover:text-yellow-400 mx-2"
-              target="_blank"
-            >
-              <i class="fab fa-facebook-f fa-lg"></i>
-            </a>
-            <a
-              href="https://youtube.com/@mtsmambaulhasan?si=kF3BV7QspIRk8f-d"
-              class="text-white hover:text-yellow-400 mx-2"
-              target="_blank"
-            >
-              <i class="fab fa-youtube fa-lg"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/mts_mambaulhasan?igsh=MW85ZDd6aDNmd2QxOQ=="
-              class="text-white hover:text-yellow-400 mx-2"
-              target="_blank"
-            >
-              <i class="fab fa-instagram fa-lg"></i>
-            </a>
-          </div>
-        </div>
-      </footer>
-      <!-- Scroll to Top Button -->
-      <button
-        id="scrollToTopBtn"
-        class="pt-2 w-10 fixed bottom-4 right-4 bg-green-700 text-white p-2 rounded-full shadow-md hover:bg-green-800 focus:outline-none"
-      >
-        ^
-      </button>
     </div>
-    <script src="script.js"></script>
-    <!-- Link to your JS file -->
-  </body>
+  </header>
+
+  <div class="container mx-auto sm:px-6 lg:px-8 pt-9">
+    <h1 class="text-4xl font-extrabold text-green-800 mb-8 mt-8 pt-10 text-center">
+      Gallery
+    </h1>
+
+    <!-- Section for 2023 -->
+    <div class="year-section mb-12">
+      <h2 class="text-2xl font-bold text-green-800 mb-6">
+        Kegiatan Tahun 2023
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Example of an image block -->
+        <div class="gallery-item">
+          <img src="image/p5.jpeg" alt="Activity 1" class="rounded-lg shadow-lg" />
+          <h3 class="text-lg font-semibold text-green-800 mt-2">
+            Kegiatan P5
+          </h3>
+          <p class="text-gray-700">
+            Project Penguatan Profil Pelajar Pancasila
+          </p>
+        </div>
+        <div class="gallery-item">
+          <img src="image/p5.jpeg" alt="Activity 1" class="rounded-lg shadow-lg" />
+          <h3 class="text-lg font-semibold text-green-800 mt-2">
+            Kegiatan P5
+          </h3>
+          <p class="text-gray-700">
+            Project Penguatan Profil Pelajar Pancasila
+          </p>
+        </div>
+        <!-- Repeat similar blocks for more images -->
+      </div>
+    </div>
+
+    <!-- Section for 2022 -->
+    <div class="year-section mb-12">
+      <h2 class="text-2xl font-bold text-green-800 mb-6">
+        Kegiatan tahun 2022
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Example of an image block -->
+        <div class="gallery-item">
+          <img src="image/tadabur.jpeg" alt="Activity 1" class="rounded-lg shadow-lg" />
+          <h3 class="text-lg font-semibold text-green-800 mt-2">
+            Outing Class
+          </h3>
+          <p class="text-gray-700">Outing class di pasir putih situbondo</p>
+        </div>
+        <div class="gallery-item">
+          <img src="image/pramuka.jpeg" alt="Activity 1" class="rounded-lg shadow-lg" />
+          <h3 class="text-lg font-semibold text-green-800 mt-2">
+            Persami
+          </h3>
+          <p class="text-gray-700">persami di halaman mts mambaul hasan</p>
+        </div>
+        <!-- Repeat similar blocks for more images -->
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn"
+      class="pt-2 w-10 fixed bottom-4 right-4 bg-green-700 text-white p-2 rounded-full shadow-md hover:bg-green-800 focus:outline-none">
+      ^
+    </button>
+  </div>
+
+  <!-- Q&A Section -->
+  <section class="bg-gray-100 py-5 md:py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-green-800">Tanya Jawab</h2>
+        <p class="text-gray-600 mt-2">
+          Pertanyaan yang sering diajukan tentang MTs Mambaul Hasan
+        </p>
+      </div>
+      <div class="space-y-4">
+        <div class="bg-green-100 rounded-lg shadow-lg p-4">
+          <button class="w-full text-left text-green-700 font-semibold text-lg" onclick="toggleAccordion(this)">
+            Mengapa memilih MTs Mambaul Hasan?
+          </button>
+          <div class="accordion-content mt-2 text-gray-700">
+            <p>
+              Karena kami memiliki mobil antar jemput, fasilitas lengkap,
+              dan program pendidikan yang berkualitas serta berlandaskan
+              nilai-nilai Islami.
+            </p>
+          </div>
+        </div>
+        <div class="bg-green-100 rounded-lg shadow-lg p-4">
+          <button class="w-full text-left text-green-700 font-semibold text-lg" onclick="toggleAccordion(this)">
+            Apa saja fasilitas yang tersedia di MTs Mambaul Hasan?
+          </button>
+          <div class="accordion-content mt-2 text-gray-700">
+            <p>
+              Kami memiliki fasilitas laboratorium, perpustakaan, ruang
+              komputer, masjid, dan lapangan olahraga yang lengkap.
+            </p>
+          </div>
+        </div>
+        <div class="bg-green-100 rounded-lg shadow-lg p-4">
+          <button class="w-full text-left text-green-700 font-semibold text-lg" onclick="toggleAccordion(this)">
+            Bagaimana cara mendaftar di MTs Mambaul Hasan?
+          </button>
+          <div class="accordion-content mt-2 text-gray-700">
+            <p>
+              Pendaftaran dapat dilakukan secara online melalui website
+              resmi kami atau datang langsung ke kantor pendaftaran di
+              sekolah.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-900 text-white py-6">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-4 md:mb-0">
+          <h3 class="font-bold text-lg">MTs Mambaul Hasan</h3>
+          <p>Jl. Joharan Sumberrejo, Probolinggo, Jawa Timur.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg">Kontak</h3>
+          <p>Telepon: +62 123 456 7890</p>
+          <p>Email: mtsmambaulhasan.com</p>
+        </div>
+      </div>
+      <div class="text-center mt-6">
+        <p>&copy; 2024 MTs Mambaul Hasan. All rights reserved.</p>
+        <p class="text-sm font-bold mt-2">Powered by KKN UNUJA</p>
+      </div>
+      <!-- Social Media Icons -->
+      <div class="text-center mt-6">
+        <a href="https://www.facebook.com/yourpage" class="text-white hover:text-yellow-400 mx-2" target="_blank">
+          <i class="fab fa-facebook-f fa-lg"></i>
+        </a>
+        <a href="https://youtube.com/@mtsmambaulhasan?si=kF3BV7QspIRk8f-d" class="text-white hover:text-yellow-400 mx-2"
+          target="_blank">
+          <i class="fab fa-youtube fa-lg"></i>
+        </a>
+        <a href="https://www.instagram.com/mts_mambaulhasan?igsh=MW85ZDd6aDNmd2QxOQ=="
+          class="text-white hover:text-yellow-400 mx-2" target="_blank">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <!-- Link to your JS file -->
+</body>
+
 </html>
