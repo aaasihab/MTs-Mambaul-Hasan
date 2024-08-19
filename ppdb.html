@@ -1,358 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
 
-    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
-    <script>
-      // Menginisialisasi polyfill
-      smoothscroll.polyfill();
-    </script>
-  </head>
-  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-    <!-- Overlay -->
-    <div
-      id="overlay"
-      class="hidden fixed inset-0 bg-black bg-opacity-50 z-20 transition-opacity duration-300"
-    ></div>
-    <header
-      class="bg-gradient-to-r from-green-700 to-green-600 shadow fixed w-full z-30"
-    >
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div class="flex items-center justify-between">
-          <!-- Logo Lembaga -->
-          <div class="flex items-center">
-            <img
-              src="image/logo-mts.png"
-              alt="Logo Lembaga"
-              class="w-12 h-12 mr-3 transition-transform duration-300"
-            />
-            <div class="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-              MTs Mambaul Hasan
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
+  <script>
+    // Menginisialisasi polyfill
+    smoothscroll.polyfill();
+  </script>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <!-- Overlay -->
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-20 transition-opacity duration-300"></div>
+  <header class="bg-gradient-to-r from-green-700 to-green-600 shadow fixed w-full z-30">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <div class="flex items-center justify-between">
+        <!-- Logo Lembaga -->
+        <div class="flex items-center">
+          <img src="image/logo-mts.png" alt="Logo Lembaga" class="w-12 h-12 mr-3 transition-transform duration-300" />
+          <div class="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+            MTs Mambaul Hasan
+          </div>
+        </div>
+        <nav class="hidden md:flex space-x-4 text-white">
+          <a href="index.html"
+            class="hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400">Beranda</a>
+          <div class="relative group">
+            <a href="#" class="hover:text-yellow-400 transition-colors duration-300 py-4">Tentang Kami</a>
+            <div class="absolute left-0 hidden group-hover:block bg-green-600 text-white mt-1 rounded shadow-lg">
+              <a href="sejarah.html" class="block px-4 py-3 hover:bg-green-700">Sejarah</a>
+              <a href="guru.html" class="block px-4 py-2 hover:bg-green-700">Guru</a>
             </div>
           </div>
-          <nav class="hidden md:flex space-x-4 text-white">
-            <a
-              href="index.html"
-              class="hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400"
-              >Beranda</a
-            >
-            <div class="relative group">
-              <a
-                href="#"
-                class="hover:text-yellow-400 transition-colors duration-300 py-4"
-                >Tentang Kami</a
-              >
-              <div
-                class="absolute left-0 hidden group-hover:block bg-green-600 text-white mt-1 rounded shadow-lg"
-              >
-                <a
-                  href="sejarah.html"
-                  class="block px-4 py-3 hover:bg-green-700"
-                  >Sejarah</a
-                >
-                <a href="guru.html" class="block px-4 py-2 hover:bg-green-700"
-                  >Guru</a
-                >
-              </div>
+          <a href="program.html"
+            class="hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400">Program</a>
+          <a href="galeri.html"
+            class="hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400">Galeri</a>
+          <a href="#" class="hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400">PPDB</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu"
+        class="md:hidden hidden mt-2 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+        <nav class="space-y-1 p-4">
+          <a href="index.html"
+            class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400">Beranda</a>
+          <div class="relative">
+            <a href="#" id="about-us-mobile"
+              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300">Tentang Kami</a>
+            <div id="about-submenu" class="hidden bg-green-600 text-white mt-1 rounded shadow-lg">
+              <a href="sejarah.html" class="block px-4 py-2 hover:bg-green-700">Sejarah</a>
+              <a href="guru.html" class="block px-4 py-2 hover:bg-green-700">Guru</a>
             </div>
-            <a
-              href="program.html"
-              class="hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400"
-              >Program</a
-            >
-            <a
-              href="galeri.html"
-              class="hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400"
-              >Galeri</a
-            >
-            <a
-              href="#"
-              class="hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400"
-              >PPDB</a
-            >
-          </nav>
-          <div class="md:hidden">
-            <button id="menu-toggle" class="text-white focus:outline-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
+          </div>
+          <a href="program.html"
+            class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400">Program</a>
+          <a href="galeri.html"
+            class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400">Galeri</a>
+          <a href="ppdb.html"
+            class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400">PPDB</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="bg-gray-100 py-9 pt-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Info Section -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-4">
+          Selamat Datang di PPDB MTs Mambaul Hasan
+        </h2>
+        <p class="mb-4">
+          Kami menyambut Anda untuk bergabung dengan MTs Mambaul Hasan. Di
+          sini, Anda akan mendapatkan pendidikan Islami berkualitas dengan
+          berbagai fasilitas yang mendukung proses belajar mengajar.
+        </p>
+        <p class="mb-4">
+          Untuk mendaftar, silakan isi form pendaftaran di bawah ini. Pastikan
+          Anda mengisi semua informasi dengan benar dan lengkap.
+        </p>
+      </section>
+
+      <!-- Registration Form -->
+      <section class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-4">Formulir Pendaftaran</h2>
+        <form action="#" method="POST">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                required />
+            </div>
+            <div>
+              <label for="tanggal-lahir" class="block text-sm font-medium text-gray-700">Tanggal Lahir</label>
+              <input type="date" id="tanggal-lahir" name="tanggal-lahir"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                required />
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
+            <textarea id="alamat" name="alamat" rows="3"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+              required></textarea>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+              required />
+          </div>
+          <div class="mb-4">
+            <label for="telepon" class="block text-sm font-medium text-gray-700">Telepon</label>
+            <input type="tel" id="telepon" name="telepon"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+              required />
+          </div>
+          <div class="mb-4">
+            <label for="kk" class="block text-sm font-medium text-gray-700">Kartu Keluarga (KK)</label>
+            <input type="file" id="kk" name="kk"
+              class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+              accept=".jpg, .jpeg, .png" required />
+          </div>
+          <div class="mb-4">
+            <label for="foto-diri" class="block text-sm font-medium text-gray-700">Foto Diri</label>
+            <input type="file" id="foto-diri" name="foto-diri"
+              class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+              accept=".jpg, .jpeg, .png" required />
+          </div>
+          <div class="mb-4">
+            <label for="ijazah" class="block text-sm font-medium text-gray-700">Ijazah Terakhir</label>
+            <input type="file" id="ijazah" name="ijazah"
+              class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+              accept=".jpg, .jpeg, .png, .pdf" required />
+          </div>
+          <div class="flex items-center justify-between">
+            <button type="submit"
+              class="bg-green-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+              Kirim
+            </button>
+            <button type="reset"
+              class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+              Reset
             </button>
           </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-900 text-white py-6">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-4 md:mb-0">
+          <h3 class="font-bold text-lg">MTs Mambaul Hasan</h3>
+          <p>Jl. Joharan Sumberrejo, Probolinggo, Jawa Timur.</p>
         </div>
-        <div
-          id="mobile-menu"
-          class="md:hidden hidden mt-2 max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <nav class="space-y-1 p-4">
-            <a
-              href="index.html"
-              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400"
-              >Beranda</a
-            >
-            <div class="relative">
-              <a
-                href="#"
-                id="about-us-mobile"
-                class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300"
-                >Tentang Kami</a
-              >
-              <div
-                id="about-submenu"
-                class="hidden bg-green-600 text-white mt-1 rounded shadow-lg"
-              >
-                <a
-                  href="sejarah.html"
-                  class="block px-4 py-2 hover:bg-green-700"
-                  >Sejarah</a
-                >
-                <a href="guru.html" class="block px-4 py-2 hover:bg-green-700"
-                  >Guru</a
-                >
-              </div>
-            </div>
-            <a
-              href="program.html"
-              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400"
-              >Program</a
-            >
-            <a
-              href="galeri.html"
-              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400"
-              >Galeri</a
-            >
-            <a
-              href="ppdb.html"
-              class="block py-2 text-white hover:text-yellow-400 transition-colors duration-300 active:text-yellow-400"
-              >PPDB</a
-            >
-          </nav>
+        <div>
+          <h3 class="font-bold text-lg">Kontak</h3>
+          <p>Telepon: +62 123 456 7890</p>
+          <p>Email: mtsmambaulhasan.com</p>
         </div>
       </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="bg-gray-100 py-9 pt-24">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Info Section -->
-        <section class="mb-8 bg-white p-6 rounded-lg shadow-md">
-          <h2 class="text-xl font-bold mb-4">
-            Selamat Datang di PPDB MTs Mambaul Hasan
-          </h2>
-          <p class="mb-4">
-            Kami menyambut Anda untuk bergabung dengan MTs Mambaul Hasan. Di
-            sini, Anda akan mendapatkan pendidikan Islami berkualitas dengan
-            berbagai fasilitas yang mendukung proses belajar mengajar.
-          </p>
-          <p class="mb-4">
-            Untuk mendaftar, silakan isi form pendaftaran di bawah ini. Pastikan
-            Anda mengisi semua informasi dengan benar dan lengkap.
-          </p>
-        </section>
-
-        <!-- Registration Form -->
-        <section class="bg-white p-6 rounded-lg shadow-md">
-          <h2 class="text-xl font-bold mb-4">Formulir Pendaftaran</h2>
-          <form action="#" method="POST">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label
-                  for="nama"
-                  class="block text-sm font-medium text-gray-700"
-                  >Nama Lengkap</label
-                >
-                <input
-                  type="text"
-                  id="nama"
-                  name="nama"
-                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  for="tanggal-lahir"
-                  class="block text-sm font-medium text-gray-700"
-                  >Tanggal Lahir</label
-                >
-                <input
-                  type="date"
-                  id="tanggal-lahir"
-                  name="tanggal-lahir"
-                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                  required
-                />
-              </div>
-            </div>
-            <div class="mb-4">
-              <label
-                for="alamat"
-                class="block text-sm font-medium text-gray-700"
-                >Alamat</label
-              >
-              <textarea
-                id="alamat"
-                name="alamat"
-                rows="3"
-                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                required
-              ></textarea>
-            </div>
-            <div class="mb-4">
-              <label for="email" class="block text-sm font-medium text-gray-700"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                required
-              />
-            </div>
-            <div class="mb-4">
-              <label
-                for="telepon"
-                class="block text-sm font-medium text-gray-700"
-                >Telepon</label
-              >
-              <input
-                type="tel"
-                id="telepon"
-                name="telepon"
-                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                required
-              />
-            </div>
-            <div class="mb-4">
-              <label for="kk" class="block text-sm font-medium text-gray-700"
-                >Kartu Keluarga (KK)</label
-              >
-              <input
-                type="file"
-                id="kk"
-                name="kk"
-                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                accept=".jpg, .jpeg, .png"
-                required
-              />
-            </div>
-            <div class="mb-4">
-              <label
-                for="foto-diri"
-                class="block text-sm font-medium text-gray-700"
-                >Foto Diri</label
-              >
-              <input
-                type="file"
-                id="foto-diri"
-                name="foto-diri"
-                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                accept=".jpg, .jpeg, .png"
-                required
-              />
-            </div>
-            <div class="mb-4">
-              <label
-                for="ijazah"
-                class="block text-sm font-medium text-gray-700"
-                >Ijazah Terakhir</label
-              >
-              <input
-                type="file"
-                id="ijazah"
-                name="ijazah"
-                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                accept=".jpg, .jpeg, .png, .pdf"
-                required
-              />
-            </div>
-            <div class="flex items-center justify-between">
-              <button
-                type="submit"
-                class="bg-green-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-              >
-                Kirim
-              </button>
-              <button
-                type="reset"
-                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-              >
-                Reset
-              </button>
-            </div>
-          </form>
-        </section>
+      <div class="text-center mt-6">
+        <p>&copy; 2024 MTs Mambaul Hasan. All rights reserved.</p>
+        <p class="text-sm font-bold mt-2">Powered by KKN UNUJA</p>
       </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-green-900 text-white py-6">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between">
-          <div class="mb-4 md:mb-0">
-            <h3 class="font-bold text-lg">MTs Mambaul Hasan</h3>
-            <p>Jl. Joharan Sumberrejo, Probolinggo, Jawa Timur.</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-lg">Kontak</h3>
-            <p>Telepon: +62 123 456 7890</p>
-            <p>Email: mtsmambaulhasan.com</p>
-          </div>
-        </div>
-        <div class="text-center mt-6">
-          <p>&copy; 2024 MTs Mambaul Hasan. All rights reserved.</p>
-          <p class="text-sm font-bold mt-2">Powered by KKN UNUJA</p>
-        </div>
-        <!-- Social Media Icons -->
-        <div class="text-center mt-6">
-          <a
-            href="https://www.facebook.com/yourpage"
-            class="text-white hover:text-yellow-400 mx-2"
-            target="_blank"
-          >
-            <i class="fab fa-facebook-f fa-lg"></i>
-          </a>
-          <a
-            href="https://youtube.com/@mtsmambaulhasan?si=kF3BV7QspIRk8f-d"
-            class="text-white hover:text-yellow-400 mx-2"
-            target="_blank"
-          >
-            <i class="fab fa-youtube fa-lg"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/mts_mambaulhasan?igsh=MW85ZDd6aDNmd2QxOQ=="
-            class="text-white hover:text-yellow-400 mx-2"
-            target="_blank"
-          >
-            <i class="fab fa-instagram fa-lg"></i>
-          </a>
-        </div>
+      <!-- Social Media Icons -->
+      <div class="text-center mt-6">
+        <a href="https://www.facebook.com/yourpage" class="text-white hover:text-yellow-400 mx-2" target="_blank">
+          <i class="fab fa-facebook-f fa-lg"></i>
+        </a>
+        <a href="https://youtube.com/@mtsmambaulhasan?si=kF3BV7QspIRk8f-d" class="text-white hover:text-yellow-400 mx-2"
+          target="_blank">
+          <i class="fab fa-youtube fa-lg"></i>
+        </a>
+        <a href="https://www.instagram.com/mts_mambaulhasan?igsh=MW85ZDd6aDNmd2QxOQ=="
+          class="text-white hover:text-yellow-400 mx-2" target="_blank">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
